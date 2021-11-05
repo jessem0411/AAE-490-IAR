@@ -1,0 +1,3 @@
+The trim thrust is calculated using the difference between the actual Crazyflie thrust and the PID thrust. And the thrust is calculated using the position of the Crazyflie. 
+
+From the c file, there is a saturation function in the attitude_pid_controller.c file. Besides that,in position_controller_pid.c , there is a code that scales the thrust of the PID thrust and the raw thrust. In pid.c, we can see that on the function pidUpdate, the integral term is constrained with a code, so there is a wind-up guard in the Crazyflie. 
